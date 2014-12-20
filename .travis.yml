@@ -1,10 +1,9 @@
-language: java
+language: groovy
 
 jdk:
   - oraclejdk7
   - openjdk7
 
-before_install:
- - chmod +x plugin/gradlew
-
-script: plugin/gradlew test
+script:
+ - gradle assemble
+ - gradle check

@@ -7,7 +7,9 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 
-	testCompile "org.spockframework:spock-core:0.7-groovy-1.8"
+  testCompile('org.spockframework:spock-core:0.7-groovy-2.0') {
+    exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+  }
 	testCompile "cglib:cglib-nodep:2.2.2"
 	testCompile "org.objenesis:objenesis:1.2"
 }
@@ -48,7 +50,7 @@ uploadArchives {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
             repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-              authentication(userName: sonatypeUsername, password: sonatypePassword)
+              authentication(userName: "sonatypeUsername", password: "sonatypePassword")
             }
 
             pom.project {
@@ -93,5 +95,5 @@ uploadArchives {
 */
 
 task wrapper(type:Wrapper) {
-    gradleVersion = "1.8"
+    gradleVersion = "2.2.1"
 }
