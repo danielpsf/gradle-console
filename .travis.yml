@@ -9,4 +9,4 @@ before_script:
 
 script:
  - ./plugin/gradlew assemble
- - ./plugin/gradle check
+ - ./plugin/gradlew check
