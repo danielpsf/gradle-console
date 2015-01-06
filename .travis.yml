@@ -5,9 +5,8 @@ jdk:
   - openjdk7
 
 before_script:
- - cd plugin/
- - chmod +x gradlew
+ - chmod +x plugin/gradlew
 
 script:
- - gradlew assemble
- - gradlew check
+ - gradlew ./plugin/assemble
+ - gradlew ./plugin/check
