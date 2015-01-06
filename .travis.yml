@@ -8,5 +8,4 @@ before_script:
  - chmod +x plugin/gradlew
 
 script:
- - gradlew ./plugin/assemble
- - gradlew ./plugin/check
+ - ./plugin/gradlew test
